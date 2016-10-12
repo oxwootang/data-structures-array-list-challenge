@@ -1,0 +1,30 @@
+$  irb -r./array_list
+irb(main):001:0> list = ArrayList.new(2)
+=> #<ArrayList:0x007fcc8a152a30 @capacity=2, @size=0, @contents=#<FixedArray:0x007fcc8a152a08 @size=2, @contents=[]>>
+irb(main):002:0> Reporter.report
+FixedArray#initialize: 1 operations
+Total: 1
+=> nil
+irb(main):003:0> list.add("a")
+=> 1
+irb(main):004:0> Reporter.report
+FixedArray#initialize: 1 operations
+FixedArray#set: 1 operations
+Total: 2
+=> nil
+irb(main):005:0> list.add("b")
+=> 2
+irb(main):006:0> Reporter.report
+FixedArray#initialize: 1 operations
+FixedArray#set: 2 operations
+Total: 3
+=> nil
+irb(main):007:0> list.add("c")
+=> 3
+irb(main):008:0> Reporter.report
+FixedArray#initialize: 2 operations
+FixedArray#set: 5 operations
+FixedArray#get: 2 operations
+Total: 9
+=> nil
+irb(main):009:0>
