@@ -4,14 +4,14 @@ class ArrayList
   class OutOfBoundsError < StandardError; end
 
   def initialize
-    @array = FixedArray.new(8)
+    @fixed_array = FixedArray.new(8)
     @length = 0
   end
 
   def add(item)
-    expand_array_capacity if length == array.size
+    expand_array_capacity if length == fixed_array.size
 
-    array.set(length, item)
+    fixed_array.set(length, item)
     self.length += 1
 
     item
@@ -19,20 +19,20 @@ class ArrayList
 
   def get(index)
     raise OutOfBoundsError if index >= length
-    array.get(index)
+    fixed_array.get(index)
   end
 
   def set(index, value)
     raise OutOfBoundsError if index >= length
-    array.set(index, value)
+    fixed_array.set(index, value)
   end
 
   def insert(index, value)
     raise OutOfBoundsError if index >= length
-    expand_array_capacity if length == array.size
+    expand_array_capacity if length == fixed_array.size
 
     shift_items_right_from(index)
-    array.set(index, value)
+    fixed_array.set(index, value)
     self.length += 1
 
     value
@@ -40,7 +40,7 @@ class ArrayList
 
   private
 
-  attr_accessor :array
+  attr_accessor :fixed_array
   attr_writer :length
 
   def shift_items_right_from(index)
@@ -58,14 +58,14 @@ class ArrayList
   end
 
   def expand_array_capacity
-    new_array = FixedArray.new(array.size * 2)
+    new_array = FixedArray.new(fixed_array.size * 2)
 
     0.upto(last_index).each do |i|
-      value = array.get(i)
+      value = fixed_array.get(i)
       new_array.set(i, value)
     end
 
-    self.array = new_array
+    self.fixed_array = new_array
   end
 
   def last_index
