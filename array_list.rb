@@ -44,7 +44,9 @@ class ArrayList
   attr_writer :length
 
   def shift_items_right_from(index)
-    last_index.downto(index).each { |i| move_item_right(i) }
+    last_index.downto(index).each do |i|
+      move_item_right(i)
+    end
   end
 
   def move_item_right(index)
