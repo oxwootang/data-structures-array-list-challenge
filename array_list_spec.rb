@@ -4,7 +4,7 @@ describe ArrayList do
 
   describe "let" do
 
-    let(:arrayList) { ArrayList.new }
+    let(:arrayList) { ArrayList.new(5) }
 
     it "creates a new empty ArrayList" do
       expect(arrayList.length).to eq 0

@@ -1,7 +1,7 @@
 class ArrayList
 
-  def initialize
-    @size = 5
+  def initialize(size)
+    @size = size
     @list = Array.new(@size)
     @count = 0
   end
