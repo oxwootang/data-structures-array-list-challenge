@@ -19,7 +19,7 @@ class ArrayList
     end
   end
 
-  def size
+  def length
     @count
   end
 
