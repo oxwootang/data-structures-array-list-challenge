@@ -50,6 +50,23 @@ describe ArrayList do
       expect(arrayList.get(2)).to eq "cookies"
     end
 
+    it "raises an error when index is out of bounds for ArrayList#insert" do
+      arrayList.add("butter")
+      arrayList.add("eggs")
+      arrayList.add("cookies")
+      arrayList.add("milk")
+      expect { arrayList.insert(5, "cake") }.to raise_error 'OutOfBoundsException'
+    end
+
+    it "inserts the element at the given index" do
+      arrayList.add("butter")
+      arrayList.add("sugar")
+      arrayList.add("eggs")
+      arrayList.add("milk")
+      arrayList.add("flour")
+      arrayList.insert(3, "vanilla extract")
+      expect(arrayList.get(3)).to eq "vanilla extract"
+    end
 
   end
 
