@@ -23,4 +23,12 @@ class ArrayList
     @count
   end
 
+  def get(index)
+    if index >= @count || index < 0
+      raise 'OutOfBoundsException'
+    else
+      @list[index]
+    end
+  end
+
 end

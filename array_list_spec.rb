@@ -15,6 +15,19 @@ describe ArrayList do
       expect(arrayList.size).to eq 1
     end
 
+    it "raises an error when index is out of bounds for ArrayList#get" do
+      arrayList.add("butter")
+      arrayList.add("cookies")
+      expect { arrayList.get(2) }.to raise_error 'OutOfBoundsException'
+    end
+
+    it "returns the value at the given index" do
+      arrayList.add("butter")
+      arrayList.add("eggs")
+      arrayList.add("cookies")
+      expect(arrayList.get(2)).to eq "cookies"
+    end
+
   end
 
 end
