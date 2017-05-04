@@ -28,6 +28,18 @@ describe ArrayList do
       expect(arrayList.get(2)).to eq "cookies"
     end
 
+    it "raises an error when index is out of bounds for ArrayList#set" do
+        expect { arrayList.set(100, "100 birds") }.to raise_error "OutOfBoundsException"
+    end
+
+    it "sets the value at index of the list to the input element" do
+      arrayList.add("butter")
+      arrayList.add("eggs")
+      arrayList.add("California")
+      arrayList.set(2, "cookies")
+      expect(arrayList.get(2)).to eq "cookies"
+    end
+
   end
 
 end

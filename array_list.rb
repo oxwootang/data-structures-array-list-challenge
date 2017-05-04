@@ -31,4 +31,12 @@ class ArrayList
     end
   end
 
+  def set(index, element)
+    if index >= @count || index < 0
+      raise 'OutOfBoundsException'
+    else
+      @list[index] = element
+    end
+  end
+
 end
