@@ -6,6 +6,9 @@ class ArrayList
     @count = 0
   end
 
+  class OutOfBoundException < StandardError
+  end
+
   def increaseSize
     @size *= 2
     biggerList = Array.new(@size)
@@ -50,7 +53,7 @@ class ArrayList
 
   def insert(index, element)
     if index >=@count || index < 0
-      raise 'OutOfBoundsException'
+      raise OutOfBoundException, "You can't do that"
     else
       if @count == @size
         increaseSize

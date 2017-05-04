@@ -55,7 +55,7 @@ describe ArrayList do
       arrayList.add("eggs")
       arrayList.add("cookies")
       arrayList.add("milk")
-      expect { arrayList.insert(5, "cake") }.to raise_error 'OutOfBoundsException'
+      expect { arrayList.insert(5, "cake") }.to raise_error(ArrayList::OutOfBoundException, "You can't do that")
     end
 
     it "inserts the element at the given index" do
