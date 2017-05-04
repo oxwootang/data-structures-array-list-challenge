@@ -12,10 +12,15 @@ class ArrayList
       @count += 1
     else
       @size *= 2
-      @biggerList = Array.new(@size)
+      biggerList = Array.new(@size)
+      tally = 0
       for elem in @list do
-        print elem
+        biggerList[tally] = elem
+        tally += 1
       end
+      @list = biggerList
+      @list[@count] = element
+      @count += 1
     end
   end
 

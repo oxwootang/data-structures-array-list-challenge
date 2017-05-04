@@ -15,6 +15,16 @@ describe ArrayList do
       expect(arrayList.length).to eq 1
     end
 
+    it "adds to the ArrayList" do
+      arrayList.add("butter")
+      arrayList.add("eggs")
+      arrayList.add("milk")
+      arrayList.add("sugar")
+      arrayList.add("flour")
+      arrayList.add("cookies")
+      expect(arrayList.length).to eq 6
+    end
+
     it "raises an error when index is out of bounds for ArrayList#get" do
       arrayList.add("butter")
       arrayList.add("cookies")
@@ -39,6 +49,7 @@ describe ArrayList do
       arrayList.set(2, "cookies")
       expect(arrayList.get(2)).to eq "cookies"
     end
+
 
   end
 
