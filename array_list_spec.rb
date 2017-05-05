@@ -68,6 +68,17 @@ describe ArrayList do
       expect(arrayList.get(3)).to eq "vanilla extract"
     end
 
+    it "inserts the element at the given index" do
+      arrayList.add("butter")
+      arrayList.add("sugar")
+      arrayList.add("eggs")
+      arrayList.add("milk")
+      arrayList.add("flour")
+      arrayList.insert(3, "vanilla extract")
+      arrayList.insert(1, "strawberries")
+      expect(arrayList.get(1)).to eq "strawberries"
+    end
+
   end
 
 end
